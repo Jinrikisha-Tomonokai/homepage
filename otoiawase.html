@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人力車友の会ホームページ</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <div class="fixed-header hina-mincho-regular">
+      <div class="header-title">
+        <img class="fit-picture hina-mincho-regular" src="images/cont_2-3_01.gif" alt="Doshisha icon" width="45" height="28"/>
+        同志社大学 人力俥友之会
+      </div>
+
+      <div class="header-menu" id="menu">
+        <a href="jinrikisha.html">ホーム</a>
+        <a href="circle.html">サークルについて</a>
+        <!-- <a href="#">私たちの目標</a> -->
+        <a href="schedule.html">スケジュール</a>
+        <a href="otoiawase.html">お問い合わせ</a>
+      </div>
+
+      <!-- ハンバーガーメニューアイコン -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="background-container">
+      <div class="imeji">
+        <img src="images/better2.png" alt="画像" />
+        <div class="overlay-text hina-mincho-regular">
+          <mark>人力俥友之会<br>伝統をつなぐ、つたえる</mark>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content zen-old-mincho-regular">
+      <p>
+        <div class="highlight">
+            <p>お問い合わせ</p>
+        </div>
+            <!-- <br>大変恐縮ですが、本ページは問い合わせフォームを備えていません。<br>ご相談、お仕事の依頼などに関しては、お手数ですが、
+            <br><br>　&nbsp;　・rikisha49@gmail.com <br><br>までお問い合わせください。 -->
+
+            <br>
+            <div class="contact-container">
+              <h2>お問い合わせフォーム</h2>
+              <form action="send_mail.php" method="post" class="contact-form">
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="message">お問い合わせ内容</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            
+                <button type="submit">送信する</button>
+              </form>
+            </div>
+        
+      </p>
+    </div>
+
+    <div class="sns-links">
+      <a href="https://x.com/rikisha49th" target="_blank">
+          <img src="images/l_my_0724twitter05.jpg" alt="X" class="sns-icon">
+      </a>
+      <a href="https://www.instagram.com/rikisha50th/" target="_blank">
+          <img src="images/images.jpg" alt="Instagram" class="sns-icon">
+      </a>
+    </div>
+
+    <div class="matsubi">
+      <small>© 2025 同志社大学人力俥友之会</small>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

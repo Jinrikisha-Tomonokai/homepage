@@ -1,0 +1,433 @@
+/* 基本設定 */
+.hina-mincho-regular {
+  font-family: "Hina Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-old-mincho-regular {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: #eeeeee; /* グレー */
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: #000000;
+}
+
+/* ヘッダーのスタイル */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 70px);
+  background-color: #660066;
+  color: white;
+  font-family: "Hannari";
+  padding: 15px 20px;
+  font-size: 25px;
+  border: 15px solid rgb(0, 0, 0); /* 枠を追加 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* 横並びを強制 */
+  align-items: baseline; /* 文字のベースラインに画像を揃える */
+  z-index: 10;
+}
+
+.header-title, .header-menu a {
+  font-family: "Hina Mincho", serif !important;
+}
+
+.fixed-header img {
+  vertical-align: middle; /* 画像をテキストの中央に揃える */
+  margin-right: 5px; /* 文字との間隔を調整 */
+  vertical-align: -5px; 
+}
+
+.fit-image{
+  top: 10;
+}
+
+/* ヘッダータイトル */
+.header-title {
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.header-title a {
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+/* メニュー */
+.header-menu {
+  display: flex;
+  gap: 15px;
+  margin-right: 200px; /* 右側の余白調整 */
+}
+
+.header-menu a {
+  position: relative;
+  overflow: hidden;
+  color: white; /* デフォルトの文字色 */
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  border-radius: 5px;
+}
+
+.header-menu a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #660066; /* ホバー時の背景色 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.header-menu a:hover {
+  color: #000000 !important; /* 💡 ホバー時の文字色を紫に変更 */
+}
+
+.header-menu a:hover::before {
+  transform: scaleX(1);
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  top: 30px;
+  vertical-align: middle; /* 画像をテキストの中央に揃える */
+  vertical-align: -5px; 
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+
+}
+
+/* メディアクエリ: ハンバーガーメニュー */
+@media (max-width: 1200px) {
+  .header-menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    right: 0px; /* 右側に少し余白 */
+    left: 0px; /* 左側を自動調整 */
+    background-color: #660066;
+    width: calc(100% - 30px); 
+    padding: 15px;
+    max-width: 1500px; /* ← 最大幅を300pxに固定 */
+    min-width: 415px; /* ← 最小幅を200pxに固定 */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-menu.show {
+    display: flex;
+  }
+}
+
+/* コンテンツ */
+.content {
+  font-size: 25px;
+  background-color: white;
+  width: 80%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+/* 画像コンテナ */
+.background-container {
+  background-color: #000000;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+/* 画像 */
+.imeji {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  min-width: 240px;
+}
+
+.imeji img {
+  width: 100%;
+  display: block;
+}
+
+/* オーバーレイテキスト */
+.overlay-text {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000,
+               -1px 1px 0 #000000, 1px -1px 0 #000000,
+               0px 1px 0 #000000, 0 -1px 0 #000000,
+               -1px 0 0 #000000, 1px 0 0 #000000;
+  width: 100%;
+}
+
+/* 画面幅が小さくなったときの調整 */
+@media (max-width: 1200px) {
+  .overlay-text {
+    top: 70%;
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-text {
+    top: 75%;
+    font-size: 5vw;
+  }
+}
+
+.sns-links {
+  display: flex;
+  justify-content: center; /* 中央寄せ */
+  gap: 15px; /* アイコン間の間隔 */
+  margin-top: 20px;
+}
+
+.sns-icon {
+  width: 50px; /* アイコンのサイズ */
+  height: 50px;
+  border-radius: 50%; /* 丸くする */
+  object-fit: cover; /* 画像が伸びないように調整 */
+  transition: transform 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.sns-icon:hover {
+  transform: scale(1.1); /* ホバー時に少し拡大 */
+}
+
+/* ハイライトの背景 */
+mark {
+  background: linear-gradient(transparent 60%, #5c4072 0%);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+/* ニュースウィジェット */
+.news-widget {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.news-widget h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #660066;
+  padding-bottom: 5px;
+}
+
+.news-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-title {
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.news-date {
+  font-size: 14px;
+  color: #888;
+}
+
+.news-summary {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.news-link {
+  font-size: 14px;
+  color: #660066;
+  text-decoration: none;
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+/* フッター */
+.matsubi {
+  background-color: #660066;
+  color: white;
+  text-align: center;
+}
+
+/* イベント */
+.widget {
+  display: inline-block;
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* オーバーレイテキスト（初期状態：見えない） */
+.overlay-text2 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* ホバー時のアニメーション */
+.image-container:hover .overlay-text {
+  bottom: 10px;
+  opacity: 1;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.yajirusi {
+  text-align: center;
+}
+
+.highlight {
+  background-color: #660066; /* 背景色 */
+  color: white; /* 文字色 */
+
+  padding: 10px; /* 余白 */
+  text-align: center; /* テキストを中央に */
+}
+
+.bigmoji{
+  font-size: 30px;
+}
+
+.dougaplay1{
+  text-align: center; 
+  background-color: #000000;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+.contact-container h2 {
+  text-align: center;
+  color: #660066;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #660066;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 0, 102, 0.2);
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #660066;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #993399;
+}
