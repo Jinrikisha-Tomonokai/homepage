@@ -434,9 +434,3 @@ mark {
   background-color: #993399;
 }
 
-@media (max-width: 768px) {
-  .calendar-frame {
-    width: 400%;
-    height: 200px;
-  }
-}
