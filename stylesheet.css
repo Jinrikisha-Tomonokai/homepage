@@ -434,10 +434,12 @@ mark {
   background-color: #993399;
 }
 
-.calendar-frame{
-  style:border 0;
+.calendar-frame {
   width: 800px;
   height: 600px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
