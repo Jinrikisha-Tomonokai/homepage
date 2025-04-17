@@ -434,25 +434,15 @@ mark {
   background-color: #993399;
 }
 
+.calender-frame{
+  style:border 0;
+  width: 800px;
+  height: 600px;
+}
+
 @media (max-width: 768px) {
-  body {
-    font-size: 16px; /* 全体の文字サイズを少し小さく */
+  .calendar-frame {
+    width: 400%;
+    height: 200px;
   }
-
-  .header-title {
-    font-size: 20px; /* ヘッダーのタイトルを調整 */
-  }
-
-  .content {
-    width: 95%;
-    padding: 10px;
-    font-size: 18px; /* コンテンツ文字も調整 */
-  }
-
-  .header-menu a {
-    font-size: 16px;
-    padding: 8px 10px;
-  }
-
-  /* 他に崩れているパーツがあればここに調整追加！ */
 }
