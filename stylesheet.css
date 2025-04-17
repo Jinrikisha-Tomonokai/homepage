@@ -436,7 +436,7 @@ mark {
 
 @media (max-width: 420px) {
   .calendar-frame {
-    width: 30%;
+    width: 50%;
     height: 200px;
   }
 }
