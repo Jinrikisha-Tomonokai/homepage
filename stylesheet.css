@@ -116,14 +116,14 @@ body {
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
-  top: 30px;
+  top: 10px;
   vertical-align: middle; /* 画像をテキストの中央に揃える */
   vertical-align: -5px; 
 }
 
 .hamburger .bar {
   width: 25px;
-  height: 3px;
+  height: 2px;
   background-color: white;
   border-radius: 5px;
 
