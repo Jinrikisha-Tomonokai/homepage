@@ -181,8 +181,9 @@ body {
 .imeji {
   position: relative;
   width: 80%;
-  max-width: 500px;
+  max-width: 800px;
   min-width: 240px;
+  max-height: 300px
 }
 
 .imeji img {
