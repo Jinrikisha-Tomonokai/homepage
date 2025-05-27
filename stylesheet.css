@@ -186,7 +186,7 @@ body {
 }
 
 .imeji img {
-  width: 78%;
+  width: 73%;
 
   display: block;
   margin: 0 auto;
@@ -194,7 +194,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .imeji img {
-    width: 87%;
+    width: 78%;
   }
 }
 
