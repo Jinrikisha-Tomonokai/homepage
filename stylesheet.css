@@ -185,17 +185,17 @@ body {
   min-width: 240px;
 }
 
-@media screen and (max-width: 767px) {
-  .imeji img {
-    width: 100%;
-  }
-}
-
 .imeji img {
   width: 78%;
 
   display: block;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .imeji img {
+    width: 130%;
+  }
 }
 
 .fadein {
