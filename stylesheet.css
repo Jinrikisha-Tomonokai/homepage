@@ -179,25 +179,47 @@ body {
 
 /* 画像 */
 .imeji {
-  position: relative;
+  margin: 0 auto;
   width: 80%;
   max-width: 800px;
   min-width: 240px;
 }
 
+@media screen and (max-width: 767px) {
+  .imeji img {
+    width: 100%;
+  }
+}
+
 .imeji img {
-  width: 100%;
+  width: 78%;
+
   display: block;
+  margin: 0 auto;
+}
+
+.fadein {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s; /* 遅れて出る場合（任意） */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* オーバーレイテキスト */
 .overlay-text {
   position: absolute;
-  top: 65%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
-  font-size: 3vw;
+  font-size:2.2vw;
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000,
@@ -375,6 +397,12 @@ mark {
 .dougaplay1{
   text-align: center; 
   background-color: #000000;
+}
+
+.dougaplay2{
+  text-align: center; 
+  background-color: #000000;
+  
 }
 
 .contact-container {
